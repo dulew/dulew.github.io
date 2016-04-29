@@ -1,0 +1,380 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass ctex-article
+\begin_preamble
+\usepackage{amsmath}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+通项求和神器之咬尾和
+\end_layout
+
+\begin_layout Author
+甘源达
+\end_layout
+
+\begin_layout Abstract
+通项求和是初等数学的一个很重要的内容，通项求和的相关问题也常见于小学奥数，中考，和高考。咬尾和是一个很有趣的通项求和问题，用数学式表示为
+\begin_inset Formula $1\times2+2\times3+3\times4+\cdots+99\times100$
+\end_inset
+
+。在这个式子中，有99项相加，每一项中是两个数的乘积，且每项乘积中的第一个数是上一项乘积中的第二个数，所以我们称之为咬尾。本文先探讨了咬尾和公式的推导方法，然后
+利用这个方法推导了3阶咬尾和公式。所谓的3阶，就是每一项是3个数的乘积，3阶咬尾和可以表示为
+\begin_inset Formula $1\times2\text{\times3}+2\times3\times4+3\times4\times5+\cdots+99\times100\times101$
+\end_inset
+
+。在这个式子中，有99项相加，每一项中是三个数的乘积，且每项乘积中的前两个数是上一项乘积中的后两个数。最后，我们利用咬尾和公式推导出了平方和
+\begin_inset Formula $1^{2}+2^{2}+3^{2}+\cdots+99^{2}$
+\end_inset
+
+，利用3阶咬尾和公式算出了立方和
+\begin_inset Formula $1^{3}+2^{3}+3^{3}+\cdots+99^{3}$
+\end_inset
+
+。在文章末尾留下了两个待解决的问题，有兴趣的读者可以尝试一下。本文适合于9岁到99岁的读者。
+\end_layout
+
+\begin_layout Section
+咬尾和的求解和公式推导
+\end_layout
+
+\begin_layout Standard
+我们先观察咬尾和的一个特例：
+\begin_inset Formula $1\times2+2\times3+3\times4+\cdots+99\times100$
+\end_inset
+
+，然后推导
+\begin_inset Formula $1\times2+2\times3+3\times4+\cdots+(n-1)\times n$
+\end_inset
+
+的求和公式。
+\end_layout
+
+\begin_layout Subsection
+求解一个咬尾和的例子
+\end_layout
+
+\begin_layout Standard
+在这一小节里，我们求咬尾和
+\begin_inset Formula $1\times2+2\times3+3\times4+\cdots+98\times99+99\times100$
+\end_inset
+
+，
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & \ \ \ \ 1\times2+2\times3+3\times4+\cdots+98\times99+99\times100\\
+ & =\frac{1}{3}\times(1\times2\times3+2\times3\times3+3\times4\times3+\cdots+98\times99\times3+99\times100\times3)\\
+ & =\frac{1}{3}\times[1\times2\times3+2\times3\times(4-1)+3\times4\times(5-2)+\cdots+98\times99\times(100-97)+\\
+ & \ \ \ \ \ \ \ \ 99\times100\times(101-98)]\\
+ & =\frac{1}{3}\times[1\times2\times3+(2\times3\times4-1\times2\times3)+(3\times4\times5-2\times3\times4)+\cdots+\\
+ & \ \ \ \ \ \ \ \ (98\times99\times100-97\times98\times99)+(99\times100\times101-98\times99\times100)]\\
+ & =\frac{1}{3}\times(99\times100\times101)\\
+ & =333300
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+咬尾和公式
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:yaoweihe-gongshi"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在这一小节里，我们求咬尾和
+\begin_inset Formula $1\times2+2\times3+3\times4+\cdots+(n-1)\times n$
+\end_inset
+
+，
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & \ \ \ \ 1\times2+2\times3+3\times4+\cdots+98\times99+99\times100\\
+ & =\frac{1}{3}\times(1\times2\times3+2\times3\times3+3\times4\times3+\cdots+98\times99\times3+99\times100\times3)\\
+ & =\frac{1}{3}\times[1\times2\times3+2\times3\times(4-1)+3\times4\times(5-2)+\cdots+98\times99\times(100-97)+\\
+ & \ \ \ \ \ \ \ \ 99\times100\times(101-98)]\\
+ & =\frac{1}{3}\times[1\times2\times3+(2\times3\times4-1\times2\times3)+(3\times4\times5-2\times3\times4)+\cdots+\\
+ & \ \ \ \ \ \ \ \ (98\times99\times100-97\times98\times99)+(99\times100\times101-98\times99\times100)]\\
+ & =\frac{1}{3}\times(99\times100\times101)\\
+ & =333300
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Features of LyX
+\end_layout
+
+\begin_layout Standard
+LyX has many features which make writing documents easier.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+After all, why else would you want to use it?
+\end_layout
+
+\end_inset
+
+ I'm 
+\shape italic
+very excited
+\shape default
+ to talk about them.
+ Here's a list of just a few.
+\end_layout
+
+\begin_layout Itemize
+LyX worries about margins, and footnote numbering for you
+\end_layout
+
+\begin_layout Itemize
+LyX makes it simple to write and edit mathematical formulae
+\end_layout
+
+\begin_layout Standard
+For a more philosophical discussion of why LyX is better than lots of other
+ word processors, see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:yaoweihe-gongshi"
+
+\end_inset
+
+, which can be found on page 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:yaoweihe-gongshi"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Lame attempts to use other LyX stuff
+\end_layout
+
+\begin_layout Standard
+I wrote a program the other day.
+ It looked like this.
+\end_layout
+
+\begin_layout LyX-Code
+5 REMARK MY AWESOME PROGRAM
+\end_layout
+
+\begin_layout LyX-Code
+10 PRINT 
+\begin_inset Quotes eld
+\end_inset
+
+I'M AWESOME!
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+20 GOTO 10
+\end_layout
+
+\begin_layout Standard
+After all that scientific thinking, I started feeling more artistic, so
+ I wrote this haiku
+\end_layout
+
+\begin_layout Verse
+LyX is really great 
+\begin_inset Newline newline
+\end_inset
+
+Typesetting word processor
+\begin_inset Newline newline
+\end_inset
+
+ It saves so much time
+\end_layout
+
+\begin_layout Section
+Math Stuff
+\end_layout
+
+\begin_layout Standard
+My favorite equation is the solution to a quadratic equation.
+ If 
+\begin_inset Formula $ax^{2}+bx+c=0$
+\end_inset
+
+ (eq.1), then 
+\begin_inset Formula $x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}$
+\end_inset
+
+ (eq.
+ 2).
+ 
+\end_layout
+
+\begin_layout Standard
+Another favorite equation is the basis of calculus: 
+\begin_inset Formula $f'(x)\equiv\lim_{\Delta x\rightarrow0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$
+\end_inset
+
+ (eq.
+ 3).
+\end_layout
+
+\begin_layout Section
+Notes
+\end_layout
+
+\begin_layout Standard
+A couple notes about LyXifiying this file:
+\end_layout
+
+\begin_layout Itemize
+I was able to remove the lines made with dashes.
+ They were there purely to separate the title and references from the rest
+ of the document.
+ LyX (LaTeX) knows enough to separate these parts of the document with space.
+\end_layout
+
+\begin_layout Itemize
+I didn't bother putting the math equations in display mode.
+ Also, I didn't use LyX' automatic equation numbering, because it's not
+ described in the 
+\emph on
+Tutorial
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+I didn't have to type the word 
+\begin_inset Quotes eld
+\end_inset
+
+References
+\begin_inset Quotes erd
+\end_inset
+
+ below.
+ LyX automatically writes it (or the word 
+\begin_inset Quotes eld
+\end_inset
+
+Bibliography,
+\begin_inset Quotes erd
+\end_inset
+
+ depending on the textclass) when you select 
+\family sans
+Bibliography
+\family default
+ style.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "lamport"
+
+\end_inset
+
+Lamport, Leslie.
+ 
+\emph on
+LaTeX: A Document Preparation System.
+
+\emph default
+ Addison-Wesley, Reading, Massachusetts, second edition, 1994.
+\end_layout
+
+\end_body
+\end_document

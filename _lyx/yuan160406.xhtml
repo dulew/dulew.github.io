@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="GENERATOR" content="LyX 2.1.4" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>一道分配问题的深入讨论</title>
+<style type='text/css'>
+/* Layout-provided Styles */
+h1.title {
+font-size: x-large;
+margin-bottom: 1ex;
+text-align: center;
+
+}
+div.author {
+font-size: large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+
+}
+div.date {
+font-size: large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: center;
+
+}
+h2.section {
+font-weight: bold;
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: left;
+
+}
+div.standard {
+margin-bottom: 2ex;
+}
+h3.subsection {
+font-weight: bold;
+font-size: large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: left;
+
+}
+blockquote.quote {
+margin-top: 0.5ex;
+margin-bottom: 0.5ex;
+margin-left: 3ex;
+margin-right: 3ex;
+text-align: left;
+
+}
+div.plain_layout {
+text-align: left;
+
+}
+ul.itemize {
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+margin-left: 3ex;
+text-align: left;
+
+}
+div.lyx_code {
+font-family: monospace;
+margin-top: 0.5ex;
+margin-bottom: 0.5ex;
+margin-left: 3ex;
+margin-right: 3ex;
+text-align: left;
+
+}
+blockquote.verse {
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+margin-left: 4ex;
+text-align: left;
+
+}
+div.bibliography {
+margin-left: 2em;
+text-indent: -2em;
+}
+span.bibitemlabel:before { content: "["; }
+span.bibitemlabel:after { content: "] "; }
+span.foot_label {
+vertical-align: super;
+font-size: smaller;
+font-weight: bold;
+text-decoration: underline;
+}
+div.foot {
+display: inline;
+font-size: small;
+font-weight: medium;
+font-family: serif;
+font-variant: normal;
+font-style: normal;
+}
+div.foot_inner { display: none; }
+div.foot:hover div.foot_inner {
+display: block;
+border: 1px double black;
+margin: 0em 1em;
+padding: 1em;
+}
+
+
+</style>
+</head>
+<body>
+<h1 class="title"><a id='magicparlabel-1' />一道分配问题的深入讨论</h1>
+<div class="author"><a id='magicparlabel-2' />甘源达</div>
+<div class="date"><a id='magicparlabel-3' />2016-04-06</div>
+<h2 class="section"><a id='magicparlabel-4' /><span class="section_label">1</span> 哲学</h2>
+<div class="standard"><a id='magicparlabel-5' />The basic philosophy of LyX is that you should worry about the content of what you're writing and not the form.</div>
+<h3 class="subsection"><a id='magicparlabel-6' /><span class="subsection_label">1.1</span> How LyX does it</h3>
+<div class="standard"><a id='magicparlabel-7' />LyX uses LaTeX, a document preparation system designed by Leslie Lamport in 1985. It, in turn, was built up from a typesetting language called TeX, created by Donald Knuth in 1984. LaTeX is designed around a philosophy similar to that of LyX. Leslie Lamport once said (see reference [<a href='#LyXCite-lamport'><span class="bib-numericallabel">1</span></a>]):</div>
+
+<blockquote class="quote"><a id='magicparlabel-8' /><div class="quote_item">The function of typographic design is to help the reader understand the author's ideas. For a document to be easy to read, its visual structure must reflect its logical structure. Quotations and computer programs, being logically distinct structural elements, should be distinguished visually from one another.... Since LaTeX can't understand your prose, you must explicitly indicate the logical structure by typing special commands.... As you are writing your document, you should be concerned with its logical structure, not its visual appearance.</div>
+</blockquote>
+<h3 class="subsection"><a id='magicparlabel-9' /><span class="subsection_label">1.2</span> Why LyX is better</h3>
+<div class="standard"><a id='magicparlabel-10' /><a id="sec_lyxbetter" />
+LyX can be useful to more people than LaTeX. It's considerably easier to learn, because you don't need to learn LaTeX (which is practically a programming language). LyX is basically like other &ldquo;What you see is what you get&rdquo; word processors, except that LyX is &ldquo;What you see is what you mean&rdquo;. In this way, it combines the ease of use of word processors with the power of LaTeX. This is a Good Thing. Also, the file format is platform independent. Best of all, it's FREE!</div>
+<h2 class="section"><a id='magicparlabel-11' /><span class="section_label">2</span> Features of LyX</h2>
+<div class="standard"><a id='magicparlabel-12' />LyX has many features which make writing documents easier.<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout"><a id='magicparlabel-16' />After all, why else would you want to use it?</div>
+</div></div> I'm <i>very excited</i> to talk about them. Here's a list of just a few.</div>
+
+<ul class="itemize"><a id='magicparlabel-17' /><li class="itemize_item">LyX worries about margins, and footnote numbering for you</li>
+<li class="itemize_item">LyX makes it simple to write and edit mathematical formulae</li>
+</ul>
+<div class="standard"><a id='magicparlabel-19' />For a more philosophical discussion of why LyX is better than lots of other word processors, see Section <a href="#sec_lyxbetter">1.2</a>, which can be found on page <a href="#sec_lyxbetter">elsewhere</a>.</div>
+<h2 class="section"><a id='magicparlabel-20' /><span class="section_label">3</span> Lame attempts to use other LyX stuff</h2>
+<div class="standard"><a id='magicparlabel-21' />I wrote a program the other day. It looked like this.</div>
+
+<div class="lyx_code"><a id='magicparlabel-22' /><div class="lyx_code_item">5 REMARK MY AWESOME PROGRAM</div>
+<div class="lyx_code_item">10 PRINT &ldquo;I'M AWESOME!&rdquo;</div>
+<div class="lyx_code_item">20 GOTO 10</div>
+</div>
+<div class="standard"><a id='magicparlabel-25' />After all that scientific thinking, I started feeling more artistic, so I wrote this haiku</div>
+
+<blockquote class="verse"><a id='magicparlabel-26' /><p class="verse_item">LyX is really great 
+<br />
+
+Typesetting word processor
+<br />
+
+ It saves so much time</p>
+</blockquote>
+<h2 class="section"><a id='magicparlabel-27' /><span class="section_label">4</span> Math Stuff</h2>
+<div class="standard"><a id='magicparlabel-28' />My favorite equation is the solution to a quadratic equation. If <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>a</mi>
+   <msup>
+    <mrow><mi>x</mi>
+    </mrow>
+    <mrow><mn>2</mn>
+    </mrow>
+   </msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn>
+  </mrow>
+ </mrow></math> (eq.1), then <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>x</mi><mo>=</mo>
+   <mfrac>
+    <mrow>
+     <mrow><mo>-</mo><mi>b</mi><mo> &plusmn; </mo>
+      <msqrt>
+       <mrow>
+        <msup>
+         <mrow><mi>b</mi>
+         </mrow>
+         <mrow><mn>2</mn>
+         </mrow>
+        </msup><mo>-</mo><mn>4</mn><mi>a</mi><mi>c</mi>
+       </mrow>
+      </msqrt>
+     </mrow>
+    </mrow>
+    <mrow>
+     <mrow><mn>2</mn><mi>a</mi>
+     </mrow>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math> (eq. 2). </div>
+
+<div class="standard"><a id='magicparlabel-29' />Another favorite equation is the basis of calculus: <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow>
+  <mrow><mi>f</mi><mo>'</mo><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo><mi>x</mi><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo><mo> &equiv; </mo>
+   <msub>
+    <mrow><mo> lim </mo>
+    </mrow>
+    <mrow>
+     <mrow><mo> &Delta; </mo><mi>x</mi><mo> &rarr; </mo><mn>0</mn>
+     </mrow>
+    </mrow>
+   </msub>
+   <mfrac>
+    <mrow>
+     <mrow><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo>
+      <mrow><mi>x</mi><mo>+</mo><mo> &Delta; </mo><mi>x</mi>
+      </mrow><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo><mo>-</mo><mi>f</mi><mo form='prefix' fence='true' stretchy='true' symmetric='true'>(</mo><mi>x</mi><mo form='postfix' fence='true' stretchy='true' symmetric='true'>)</mo>
+     </mrow>
+    </mrow>
+    <mrow>
+     <mrow><mo> &Delta; </mo><mi>x</mi>
+     </mrow>
+    </mrow>
+   </mfrac>
+  </mrow>
+ </mrow></math> (eq. 3).</div>
+<h2 class="section"><a id='magicparlabel-30' /><span class="section_label">5</span> Notes</h2>
+<div class="standard"><a id='magicparlabel-31' />A couple notes about LyXifiying this file:</div>
+
+<ul class="itemize"><a id='magicparlabel-32' /><li class="itemize_item">I was able to remove the lines made with dashes. They were there purely to separate the title and references from the rest of the document. LyX (LaTeX) knows enough to separate these parts of the document with space.</li>
+<li class="itemize_item">I didn't bother putting the math equations in display mode. Also, I didn't use LyX' automatic equation numbering, because it's not described in the <em>Tutorial</em>.</li>
+<li class="itemize_item">I didn't have to type the word &ldquo;References&rdquo; below. LyX automatically writes it (or the word &ldquo;Bibliography,&rdquo; depending on the textclass) when you select <span style='font-family:sans-serif;'>Bibliography</span> style.</li>
+</ul>
+<h2 class='bibliography'>References</h2>
+
+<div class='bibliography'><div class="bibliography"><a id='magicparlabel-35' /><a id='LyXCite-lamport' />
+<span class='bibitemlabel'>1</span>Lamport, Leslie. <em>LaTeX: A Document Preparation System.</em> Addison-Wesley, Reading, Massachusetts, second edition, 1994.</div>
+</div></body>
+</html>

@@ -1,0 +1,215 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt]{ctexart}
+\usepackage{amstext}
+\usepackage{fontspec}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=1cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsmath}
+
+\makeatother
+
+\usepackage{xunicode}
+\begin{document}
+
+\title{通项求和神器之咬尾和}
+
+
+\author{甘源达}
+\maketitle
+\begin{abstract}
+咬尾和是一个很有趣的通项求和问题，用数学式表示为$1\times2+2\times3+3\times4+\cdots+99\times100$。在这个式子中，有99项相加，每一项中是两个数的乘积，且每项乘积中的第一个数是上一项乘积中的第二个数，所以我们称之为咬尾。本文先探讨了咬尾和的求解方法，然后把这个方法推导到3阶咬尾和公式。所谓的3阶，就是每一项是3个数的乘积，3阶咬尾和可以表示为$1\times2\text{\ensuremath{\times}3}+2\times3\times4+3\times4\times5+\cdots+99\times100\times101$。在这个式子中，有99项相加，每一项中是三个数的乘积，且每项乘积中的前两个数是上一项乘积中的后两个数。最后，我们利用咬尾和公式推导出了平方和$1^{2}+2^{2}+3^{2}+\cdots+n^{2}$，利用3阶咬尾和公式算出了立方和$1^{3}+2^{3}+3^{3}+\cdots+n^{3}$。我们在文章末尾留下了一个待解决的问题，有兴趣的读者可以尝试一下。本文适合于9岁到99岁的读者。
+\end{abstract}
+
+\section{咬尾和的求解和公式推导}
+
+我们先研究咬尾和的一个特例：$1\times2+2\times3+3\times4+\cdots+99\times100$，然后推导$1\times2+2\times3+3\times4+\cdots+(n-1)\times n$的求和公式。
+
+
+\subsection{求解咬尾和}
+
+在这一小节里，我们求咬尾和$1\times2+2\times3+3\times4+\cdots+98\times99+99\times100$。
+\begin{align*}
+ & \ \ \ \ 1\times2+2\times3+3\times4+\cdots+98\times99+99\times100\\
+ & =\frac{1}{3}\times(1\times2\times3+2\times3\times3+3\times4\times3+\cdots+98\times99\times3+99\times100\times3)\\
+ & =\frac{1}{3}\times[1\times2\times3+2\times3\times(4-1)+3\times4\times(5-2)+\cdots+98\times99\times(100-97)+\\
+ & \ \ \ \ \ \ \ \ 99\times100\times(101-98)]\\
+ & =\frac{1}{3}\times[1\times2\times3+(2\times3\times4-1\times2\times3)+(3\times4\times5-2\times3\times4)+\cdots+\\
+ & \ \ \ \ \ \ \ \ (98\times99\times100-97\times98\times99)+(99\times100\times101-98\times99\times100)]\\
+ & =\frac{1}{3}\times(99\times100\times101)\\
+ & =333300
+\end{align*}
+
+
+
+\subsection{咬尾和公式}
+
+在这一小节里，我们把99替换成$n$，然后求咬尾和$1\times2+2\times3+3\times4+\cdots+n\times(n+1)$。这样，我们就可以求解任意多项的咬尾和了。
+\begin{align*}
+ & \ \ \ \ 1\times2+2\times3+\cdots+n\times(n+1)\\
+ & =\frac{1}{3}\times(1\times2\times3+2\times3\times3+\cdots+n\times(n+1)\times3)\\
+ & =\frac{1}{3}\times\left\{ 1\times2\times3+2\times3\times(4-1)+\cdots+n\times(n+1)\times[(n+2)-(n-1)]\right\} \\
+ & =\frac{1}{3}\times\lbrace1\times2\times3+(2\times3\times4-1\times2\times3)+\cdots+\\
+ & \ \ \ \ \ [(n\times(n+1)\times(n+2\text{)}-(n-1)\times n\times(n+1)]\rbrace\\
+ & =\frac{1}{3}\times n\times(n+1)\times(n+2\text{)}
+\end{align*}
+现在，我们就有了咬尾和公式
+\begin{equation}
+1\times2+2\times3+\cdots+n\times(n+1)=\frac{1}{3}\times n\times(n+1)\times(n+2\text{)}
+\end{equation}
+
+
+
+\section{平方和的求解和公式推导\label{sec:=005E73=0065B9=00548C=007684=006C42=0089E3=00548C=00516C=005F0F=0063A8=005BFC}}
+
+在这节里，我们利用咬尾和来求解平方和$1^{2}+2^{2}+3^{2}+\cdots+99^{2}$。然后，我们推广到求$1^{2}+2^{2}+3^{2}+\cdots+n{}^{2}$。
+
+
+\subsection{求解平方和}
+
+在这一小节里，我们求平方和$1^{2}+2^{2}+3^{2}+\cdots+99^{2}$。我们可以观察到$1^{2}$可以写成$1\times2-1$，$2^{2}$可以写成$2\times3-2$，$\cdots$，
+$99^{2}$可以写成$99\times100-99$, 所以我们有
+\begin{align*}
+ & \ \ \ \ 1^{2}+2^{2}+\cdots+99^{2}\\
+ & =(1\times2+2\times3+\cdots+99\times100)-(1+2+\cdots+99)\\
+ & =333300-4950\\
+ & =328350
+\end{align*}
+
+
+
+\subsection{平方和公式}
+
+在这一小节里，我们把99替换成$n$，然后求$1^{2}+2^{2}+3^{2}+\cdots+n{}^{2}$。我们可以观察到$1^{2}$可以写成$1\times2-1$,
+$2^{2}$可以写成$2\times3-2$, $3^{2}$可以写成$3\times4-3$,$\cdots$,$n^{2}$可以写成$n\times(n+1)-n$,
+所以我们有
+\begin{align*}
+ & \ \ \ \ 1^{2}+2^{2}+3^{2}+\cdots+n^{2}\\
+ & =[(1\times2+2\times3+3\times4+\cdots+n\times(n+1)]-\left(1+2+3+\cdots+n\right)\\
+ & =\frac{1}{3}\times n\times(n+1)\times(n+2\text{)}-\frac{1}{2}\times n\times(n+1)\\
+ & =\frac{1}{6}\times n\times(n+1)\times(2n+1)
+\end{align*}
+这样，我们就推导出了平方和公式
+\begin{equation}
+1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{1}{6}\times n\times(n+1)\times(2n+1)\label{eq:=005E73=0065B9=00548C=00516C=005F0F}
+\end{equation}
+
+
+
+\section{三阶咬尾和}
+
+我们先观察咬尾和的一个特例：$1\times2\text{\ensuremath{\times}3}+2\times3\times4+\cdots+99\times100\times101$，然后推导$1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)$的求和公式。
+
+
+\subsection{求解三阶咬尾和}
+
+在这一小节里，我们求咬尾和$1\times2\text{\ensuremath{\times}3}+2\times3\times4+\cdots+99\times100\times101$。
+\begin{align*}
+ & \ \ \ \ 1\times2\text{\ensuremath{\times}3}+2\times3\times4+\cdots+98\times99\times100+99\times100\times101\\
+ & =\frac{1}{4}\times(1\times2\times3\times4+2\times3\times4\times4+\cdots+98\times99\times100\text{\ensuremath{\times}4}+99\times100\times101\times4)\\
+ & =\frac{1}{4}\times[1\times2\times3\times4+2\times3\times4\times(5-1)+\cdots+98\times99\times100\times(101-98)+\\
+ & \ \ \ \ \ \ \ \ 99\times100\times101\times(102-99)]\\
+ & =\frac{1}{4}\times[1\times2\times3\times4+(2\times3\times4\times5-1\times2\times3\times4)+\cdots+\\
+ & \ \ \ \ \ \ \ \ (98\times99\times100-97\times98\times99)+(99\times100\times101-98\times99\times100)]\\
+ & =\frac{1}{4}\times(99\times100\times101\times102)\\
+ & =25497450
+\end{align*}
+
+
+
+\subsection{三阶咬尾和公式}
+
+在这一小节里，我们把$99$替换成$n$，然后求咬尾和$1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)$。这样，我们就可以求解任意多项的三阶咬尾和了。
+\begin{align*}
+ & \ \ \ \ 1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)\\
+ & =\frac{1}{4}\times[1\times2\times3\times4+2\times3\times4\times4+\cdots+n\times(n+1)\times(n+2)\times4]\\
+ & =\frac{1}{4}\times\{1\times2\times3\times4+2\times3\times4\times(5-1)+\cdots+\\
+ & \ \ \ \ \ \ \ n\times(n+1)\times(n+2)\times[(n+3)-(n-1)]\}\\
+ & =\frac{1}{4}\times\{1\times2\times3\times4+(2\times3\times4\times5-1\times2\times3\times4)+\cdots+\\
+ & \ \ \ \ \ \ \ [n\times(n+1)\times(n+2)\times(n+3)-(n-1)n\times(n+1)\times(n+2)]\}\\
+ & =\frac{1}{4}\times n\times(n+1)\times(n+2)\times(n+3)
+\end{align*}
+现在，我们就推导出了复杂的三阶咬尾和公式
+\begin{equation}
+1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)=\frac{1}{4}\times n\times(n+1)\times(n+2)\times(n+3)
+\end{equation}
+
+
+
+\section{立方和的求解和公式推导\label{sec:=007ACB=0065B9=00548C=007684=006C42=0089E3=00548C=00516C=005F0F=0063A8=005BFC}}
+
+在这节里，我们想用类似于第\ref{sec:=005E73=0065B9=00548C=007684=006C42=0089E3=00548C=00516C=005F0F=0063A8=005BFC}节里一样，先尝试求
+\begin{equation}
+1^{3}+2^{3}+3^{3}+\cdots+99^{3}\label{eq:=007ACB=0065B9=00548C=007279=004F8B}
+\end{equation}
+
+
+然后，我们推导一般公式$1^{3}+2^{3}+3^{3}+\cdots+n^{3}$。
+
+
+\subsection{求解立方和的特例}
+
+在这一小节里，我们想找到立方和\eqref{eq:=007ACB=0065B9=00548C=007279=004F8B}与咬尾和
+\begin{equation}
+1\times2\text{\ensuremath{\times}3}+2\times3\times4+\cdots+99\times100\times101\label{eq:=004E09=009636=0054AC=005C3E=00548C=007279=004F8B}
+\end{equation}
+的关系，但似乎并不容易找到规律。值得注意的是，有的时候，特例比一般问题更难解。就比如立方和\eqref{eq:=007ACB=0065B9=00548C=007279=004F8B}与三阶咬尾和\eqref{eq:=004E09=009636=0054AC=005C3E=00548C=007279=004F8B}的关系，比下面的\eqref{eq:=004E00=00822C=007ACB=0065B9=00548C}与\eqref{eq:=004E00=00822C=004E09=009636=0054AC=005C3E=00548C}的关系还更难找。这可能是因为只见树木不见森林的缘故吧。
+
+因为这个特例不容易解，我们就直接推导一般公式了。
+
+
+\subsection{立方和公式}
+
+在这一小节里，我们想观察立方和一般表达式
+\begin{equation}
+1^{3}+2^{3}+3^{3}+\cdots+n^{3}\label{eq:=004E00=00822C=007ACB=0065B9=00548C}
+\end{equation}
+与三阶咬尾和的一般表达式
+\begin{equation}
+1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)\label{eq:=004E00=00822C=004E09=009636=0054AC=005C3E=00548C}
+\end{equation}
+我们可以观察到$n\times(n+1)\times(n+2)$可以写成$n^{3}+3n^{2}+2n$, 所以有
+\begin{align*}
+ & \ \ \ \ 1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)\\
+ & =\left(1+2^{3}+\cdots+n^{3}\right)+3\times\left(1^{2}+2^{2}+\cdots+n{}^{2}\right)+2\times\left(1+2+\cdots+n\right)
+\end{align*}
+做一下移项操作，我们有
+\begin{align*}
+ & \ \ \ \ 1+2^{3}+\cdots+n^{3}\\
+ & =\left[1\times2\times3+2\times3\times4+\cdots+n\times(n+1)\times(n+2)\right]-\\
+ & \ \ \ \ \ \ \ \left[3\times\left(1^{2}+2^{2}+\cdots+n{}^{2}\right)+2\times\left(1+2+\cdots+n\right)\right]
+\end{align*}
+把三阶咬尾和公式\eqref{eq:=004E00=00822C=004E09=009636=0054AC=005C3E=00548C}，平方和公式\eqref{eq:=005E73=0065B9=00548C=00516C=005F0F}代入上式，就得到了立方和公式
+\begin{equation}
+1+2^{3}+\cdots+n^{3}=\left(1+2+\cdots+n\right)^{2}\label{eq:=007ACB=0065B9=00548C=00516C=005F0F}
+\end{equation}
+
+
+
+\section{总结}
+
+
+\subsection{本文的主要内容和结果}
+
+我们研究了怎么求咬尾和公式以及高阶咬尾和公式的推导。在这个推导的过程中，最关键的步骤是
+\begin{align*}
+ & \ \ \ \ 1\times2+2\times3+3\times4+\cdots+98\times99+99\times100\\
+ & =\frac{1}{3}\times[1\times2\times3+2\times3\times(4-1)+\cdots+98\times99\times(100-97)+\\
+ & \ \ \ \ \ \ \ \ 99\times100\times(101-98)]
+\end{align*}
+在这步骤中，每一项先乘以3，然后就可以裂项，即把一项拆成两项，比如，
+\[
+98\times99\times3=98\times99\times100-97\times98\times99
+\]
+一个关键的问题是：这一步是怎么想到的，有没有什么系统的方法来想到这一步，而不是仅仅靠灵机一动？
+
+利用咬尾和的研究结果，我们推导了著名的平方和以及立方和公式。推导过程中的关键步骤是发现咬尾和与平方和，三阶咬尾和与立方和的联系。
+
+
+\subsection{进一步的研究}
+
+在第\ref{sec:=005E73=0065B9=00548C=007684=006C42=0089E3=00548C=00516C=005F0F=0063A8=005BFC}节和第\ref{sec:=007ACB=0065B9=00548C=007684=006C42=0089E3=00548C=00516C=005F0F=0063A8=005BFC}节中，我们推导了平方和以及立方和的公式。有一个问题是：能不能用相同的研究方法推导出更高阶的4次方和，5次方和，甚至$m$次方和（$m\rightarrow\text{无穷大}$）呢？
+\end{document}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2016-04-14"/>
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all"/>
+<title>一道分配问题的深入讨论</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+一道分配问题的深入讨论
+</h1>
+<h2 class="author">
+甘源达
+</h2>
+<h2 class="Date">
+2016-04-06
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.1">None.1</a> 哲学
+</h2>
+<div class="Unindented">
+The basic philosophy of LyX is that you should worry about the content of what you’re writing and not the form.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.1.1">None.1.1</a> How LyX does it
+</h3>
+<div class="Unindented">
+LyX uses LaTeX, a document preparation system designed by Leslie Lamport in 1985. It, in turn, was built up from a typesetting language called TeX, created by Donald Knuth in 1984. LaTeX is designed around a philosophy similar to that of LyX. Leslie Lamport once said (see reference <span class="bibcites">[<a class="bibliocite" name="cite-1" href="#biblio-1">1</a>]</span>):
+</div>
+<blockquote class="Quote">
+The function of typographic design is to help the reader understand the author’s ideas. For a document to be easy to read, its visual structure must reflect its logical structure. Quotations and computer programs, being logically distinct structural elements, should be distinguished visually from one another.... Since LaTeX can’t understand your prose, you must explicitly indicate the logical structure by typing special commands.... As you are writing your document, you should be concerned with its logical structure, not its visual appearance.
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-None.1.2">None.1.2</a> Why LyX is better
+</h3>
+<div class="Unindented">
+<a class="Label" name="sec:lyxbetter"> </a>LyX can be useful to more people than LaTeX. It’s considerably easier to learn, because you don’t need to learn LaTeX (which is practically a programming language). LyX is basically like other &ldquo;What you see is what you get&rdquo; word processors, except that LyX is &ldquo;What you see is what you mean&rdquo;. In this way, it combines the ease of use of word processors with the power of LaTeX. This is a Good Thing. Also, the file format is platform independent. Best of all, it’s FREE!
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.2">None.2</a> Features of LyX
+</h2>
+<div class="Unindented">
+LyX has many features which make writing documents easier.<span class="FootOuter"><span class="SupFootMarker"> [A] </span><span class="HoverFoot"><span class="SupFootMarker"> [A] </span>After all, why else would you want to use it?</span></span> I’m <i>very excited</i> to talk about them. Here’s a list of just a few.
+</div>
+<ul>
+<li>
+LyX worries about margins, and footnote numbering for you
+</li>
+<li>
+LyX makes it simple to write and edit mathematical formulae
+</li>
+
+</ul>
+<div class="Unindented">
+For a more philosophical discussion of why LyX is better than lots of other word processors, see Section <a class="Reference" href="#sec:lyxbetter">None.1.2↑</a>, which can be found on page <a class="Reference" href="#sec:lyxbetter">1↑</a>.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.3">None.3</a> Lame attempts to use other LyX stuff
+</h2>
+<div class="Unindented">
+I wrote a program the other day. It looked like this.
+</div>
+<pre class="LyX-Code">
+5 REMARK MY AWESOME PROGRAM
+10 PRINT &ldquo;I’M AWESOME!&rdquo;
+20 GOTO 10
+</pre>
+<div class="Unindented">
+After all that scientific thinking, I started feeling more artistic, so I wrote this haiku
+</div>
+<div class="Verse">
+LyX is really great <br/>
+Typesetting word processor<br/>
+ It saves so much time
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.4">None.4</a> Math Stuff
+</h2>
+<div class="Unindented">
+My favorite equation is the solution to a quadratic equation. If <span class="formula"><i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i> = 0</span> (eq.1), then <span class="formula"><i>x</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"> − <i>b</i>±<span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>b</i><sup>2</sup> − 4<i>ac</i></span><span class="ignored">)</span></span></span><span class="ignored">)/(</span><span class="denominator">2<i>a</i></span><span class="ignored">)</span></span></span> (eq. 2). 
+</div>
+<div class="Indented">
+Another favorite equation is the basis of calculus: <span class="formula"><i>f</i>’(<i>x</i>) ≡ <span class="limits"><span class="limit">lim</span></span><sub>Δ<i>x</i> → 0</sub><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>f</i>(<i>x</i> + Δ<i>x</i>) − <i>f</i>(<i>x</i>)</span><span class="ignored">)/(</span><span class="denominator">Δ<i>x</i></span><span class="ignored">)</span></span></span> (eq. 3).
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-None.5">None.5</a> Notes
+</h2>
+<div class="Unindented">
+A couple notes about LyXifiying this file:
+</div>
+<ul>
+<li>
+I was able to remove the lines made with dashes. They were there purely to separate the title and references from the rest of the document. LyX (LaTeX) knows enough to separate these parts of the document with space.
+</li>
+<li>
+I didn’t bother putting the math equations in display mode. Also, I didn’t use LyX’ automatic equation numbering, because it’s not described in the <i>Tutorial</i>.
+</li>
+<li>
+I didn’t have to type the word &ldquo;References&rdquo; below. LyX automatically writes it (or the word &ldquo;Bibliography,&rdquo; depending on the textclass) when you select <span class="sans">Bibliography</span> style.
+</li>
+
+</ul>
+<a class="toc" name="References"></a><h1 class="biblio">
+References
+</h1>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-1">1</a>] </span>Lamport, Leslie. <i>LaTeX: A Document Preparation System.</i> Addison-Wesley, Reading, Massachusetts, second edition, 1994.
+</p>
+
+</div>
+</body>
+</html>
